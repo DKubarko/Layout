@@ -120,7 +120,6 @@ header {
 
 nav {
     width: 100%;
-    margin-top: 15px;
     text-align: center;
     position: sticky;
     position: -moz-sticky;
@@ -171,6 +170,7 @@ nav > ul > .menu-shadow > li:last-child > a {
     border-radius: 0 6px 4px 0;
 }
 
+
 /*Компьютеры*/
 
 @media screen and (max-width:920px) {
@@ -203,15 +203,8 @@ nav > ul > .menu-shadow > li:last-child > a {
     }
 }
 
-/*BURGER-MENU*/
 
-.burger-container::after{
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: red;
-}
+/*BURGER-MENU*/
 
 .burger-container {
     display: none;
@@ -227,17 +220,159 @@ nav > ul > .menu-shadow > li:last-child > a {
 .burger-menu {
     width: 100%;
     height: 100%;
-    background-image: url(media/menu2/white.svg);
+    background-image: url(media/burger-menu/white.svg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-#burger-checkbox{
+#burger-checkbox {
     display: none;
 }
 
-#burger-checkbox:checked{
+.telephone-menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -75%;
+    height: 100%;
+    width: 75%;
+    background-color: #525252;
+    opacity: 0.99;
+    transition: left 0.2s ease-out;
 }
+
+#burger-checkbox:checked + .telephone-menu {
+    left: 0;
+}
+
+.telephone-menu > ul {
+    height: 100%;
+    overflow: auto;
+}
+
+.telephone-menu > ul > li:first-child > label {
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 5.3%;
+    padding-top: 5.3%;
+    padding-left: 9%;
+    text-transform: uppercase;
+    font-size: 60px;
+}
+
+.telephone-menu li a,
+.telephone-menu li label {
+    display: block;
+    font-size: 65px;
+    font-family: my;
+    color: white;
+}
+
+.telephone-menu > ul > li:nth-child(2) a {
+    background-color: #353535;
+    border-bottom: none;
+}
+
+.telephone-menu li a:active {
+    background-color: #353535;
+}
+
+.telephone-menu li.inner > a{
+    background-color: transparent;
+}
+
+.telephone-menu li:first-child label span {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 19%;
+    left: -70px;
+    background-image: url(media/burger-menu/cross.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.telephone-menu li label div {
+    position: relative;
+    display: inline-block;
+}
+
+.telephone-menu li a {
+    text-align: left;
+    padding: 5% 0 5% 5%;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+input[id*="checkbox-for-row"] {
+    display: none;
+}
+
+.telephone-menu li.inner {
+    position: relative;
+}
+
+.telephone-menu label[for*="checkbox-for-row"] {
+    position: absolute;
+    width: 100%;
+    height: 2.4em;
+}
+
+.telephone-menu a.inner .row-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-sizing: border-box;
+    height: 100%;
+    padding-right: 4%;
+    padding-left: 2%;
+    width: 15%;
+}
+
+.telephone-menu a.inner .row-container .row {
+    background-image: url(media/inside-menu/lightgray.svg);
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+.telephone-menu input[id*="checkbox-for-row"]:checked + a > .row-container > .row{
+    transform: rotate(90deg);
+    margin-top: 2px;
+}
+
+.telephone-menu ul ul a {
+    font-size: 55px;
+    padding-left: 15%;
+}
+
+.telephone-menu ul ul ul a {
+    padding-left: 25%;
+}
+
+.telephone-menu a.inner + ul {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.telephone-menu a.inner + ul li {
+    display: none;
+}
+
+.telephone-menu input[id*="checkbox-for-row"]:checked + a .row-container{
+    height: 2.4em;
+}
+
+.telephone-menu input[id*="checkbox-for-row"]:checked + a + ul > li {
+    display: block;
+}
+
+.telephone-menu input[id*="checkbox-for-row"]:checked + a + ul {
+    opacity: 1;
+}
+
 
 /*Inside menu*/
 
@@ -291,7 +426,7 @@ nav a.inner .row-container {
 }
 
 nav a.inner .row-container .row {
-    background-image: url(media/inside-menu/row-right/lightgray.svg);
+    background-image: url(media/inside-menu/lightgray.svg);
     background-size: contain;
     width: 100%;
     height: 100%;

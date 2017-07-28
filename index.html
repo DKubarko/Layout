@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Макет</title>
     <link href="reset.css" rel="stylesheet">
-    <link href="style.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +24,45 @@
                     <div class="burger-menu" id="burger"></div>
                 </label>
                 <input type="checkbox" id="burger-checkbox">
-                <div class="telephone-menu"></div>
+
+                <div class="telephone-menu">
+                    <ul>
+                        <li>
+                            <label for="burger-checkbox">
+                                <div><span class="cross"></span>
+                                    <p>Закрыть</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li><a href="index.html">Главная</a></li>
+                        <li class="inner">
+                            <label for="checkbox-for-row"></label>
+                            <input type="checkbox" id="checkbox-for-row">
+                            <a class="inner">Магазин
+                                <div class="row-container">
+                                    <div class="row"></div>
+                                </div>
+                            </a>
+                            <ul>
+                                <li><a href="#">Телефоны</a></li>
+                                <li><a href="#">Планшеты</a></li>
+                                <li class="inner">
+                                    <label for="checkbox-for-row2"></label>
+                                    <input type="checkbox" id="checkbox-for-row2">
+                                    <a class="inner" href="#">Ноутбуки<div class="row-container"><div class="row"></div></div></a>
+                                    <ul>
+                                        <li><a href="#">Microsoft</a></li>
+                                        <li><a href="#">Apple</a></li>
+                                        <li><a href="#">MSI</a></li>
+                                        <li><a href="#">Xiaomi</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">О нас</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
         <nav class="nav" id="menu">
